@@ -8,11 +8,11 @@ import os
 
 
 
-
 class Report(models.Model):
     sheet_name = models.CharField(max_length=32,null=True,blank=True)
     column = models.IntegerField(null=True, blank=True)
     file = models.FileField(storage=private_storage,null=True,blank=True)
+
 
 
 

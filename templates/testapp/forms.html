@@ -8,8 +8,9 @@
 
 {% block main %}
 
-<h2> TRAFFIC DATA VALIDATION </h2><br><br><br>
-<div class = "container">
+
+<div class = "mark1">
+    <h2> TRAFFIC DATA VALIDATION </h2><br><br><br>
 <form action="/index/" method="post" enctype="multipart/form-data">
 
     {% csrf_token %}
@@ -18,17 +19,27 @@
     <button  type="submit"  class="btn btn-success"> SUBMIT</button>
 
 </div>
-
 </form>
+
+
+
+<div class="mark2">
+<table>
+<thead>
+  <th>ALPHABET</th> &nbsp &nbsp
+  <th>NUMBER</th>
+
+</thead>
+{% for a in alphabet %}
+<tr>
+  <td> {{ a.letter}}</td>
+  <td> {{ a.number }}</td>
+
+</tr>
+{% endfor %}
+</table>
+</div>
 {%endblock%}
-
-
-{% for a in alpha%}
-
-<li>{{a}}</li></br></br>
-
- {% endfor%}
-
 
 
 

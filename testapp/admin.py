@@ -14,3 +14,4 @@ class AlphAdmin(admin.ModelAdmin):
 
 
 admin.site.register(Report,ReportAdmin)
+admin.site.register(Alpha,AlphAdmin)

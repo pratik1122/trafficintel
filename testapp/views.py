@@ -1,6 +1,6 @@
 from django.shortcuts import render
 # Create your views here.
-from testapp.models import Report
+from testapp.models import Report,Alpha
 from testapp.forms import ReportForm
 import openpyxl
 from pycel import ExcelCompiler
@@ -10,13 +10,14 @@ from tempfile import NamedTemporaryFile
 
 
 def input(request):
+    alphabet = Alpha.objects.all()
     form = ReportForm()
     if request.method == 'POST':
         form = ReportForm(request.POST,request.FILES)
         if form.is_valid():
            form.save()
 
-    return render(request,'testapp/forms.html',{'form':form})
+    return render(request,'testapp/forms.html',{'form':form,'alphabet':alphabet})
 
 
 
@@ -303,7 +304,6 @@ def index(request):
         #
         # print(worksheet['P10'].value)
         # wb.save()
-
 
         qs = Report.objects.all()
         qs.delete()
