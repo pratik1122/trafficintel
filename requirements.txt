@@ -1,8 +1,8 @@
-Django==2.2.7
+Django==2.2.24
 pytz==2019.3
 sqlparse==0.3.0
 cycler==0.10.0
-Django==2.2.7
+Django==2.2.24
 django-excel==0.0.10
 et-xmlfile==1.0.1
 jdcal==1.4.1
